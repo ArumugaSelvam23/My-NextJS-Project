@@ -28,7 +28,7 @@ export async function getStaticPaths() {
   client.close();
   return {
     // fallback key tells NextJS whether your paths array contains all supported parameter values or not.
-    fallback: false,
+    fallback: "blocking",
     paths: meetups.map((meetup) => ({
       params: { meetupId: meetup._id.toString() },
     })),
